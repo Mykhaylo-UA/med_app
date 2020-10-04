@@ -1,0 +1,16 @@
+.User{
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.User > thead{
+    position: sticky;
+    top: 0;
+    background-color: rgb(211, 211, 211);
+}
+.User > caption{
+    font-size: 1.2em;
+    background-color: khaki;
+    font-weight: bold;
+}

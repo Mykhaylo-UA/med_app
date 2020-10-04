@@ -1,0 +1,99 @@
+.SignUp {
+    padding: 20px 0;
+}
+.SignUp > div{
+    width: 90%;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 6px -1px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 10px;
+}
+.SignUp > div > h2{
+    width: calc(100% - 20px);
+    padding: 10px 20px;
+    background-color: #FFE925;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+    margin-left: -10px;
+}
+.SignUp > div > div{
+    display: flex;
+    justify-content: space-between;
+}
+.TableDiv{
+    overflow: auto;
+    width: calc(100% - 60px);
+
+}
+.Table{
+    width: calc(100% - 60px);
+    margin: auto;
+}
+.Table thead{
+    text-align: center;
+    color: #4BBEC5;
+    font-weight: bold;
+}
+.Table{
+    border-collapse: collapse;
+}
+.Table th, .Table td {
+    border: 2px solid #d2d2d2;
+    text-align: center;
+}
+
+.Table tr > td:first-of-type{
+    border-left: none;
+}
+.Table tr > td:last-of-type{
+    border-right: none;
+}
+.Table thead > tr > td{
+    border-top: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+}
+.Table thead > tr > td > div:nth-child(2){
+    color: black;
+}
+.Table td{
+    padding: 7px 0;
+    font-size: 0.9em;
+    min-width: calc(100% / 7);
+}
+.Table tbody > tr:last-of-type > td{
+    border-bottom: none;
+}
+
+.Button{
+    background-color: #4BBEC5;
+    font-size: 1.1em;
+    font-weight: bold;
+    width: 70%;
+    height: 50px;
+    border-radius: 10px;
+    margin: 5px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.Vector{
+    width: 30px;
+    height: 30px;
+    background-image: url("../../svg/vector.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    margin-top: 20px;
+}
+.Vector:hover{
+    background-color: rgb(245, 245, 245);
+    cursor: pointer;
+}
+.VectorRight{
+    transform: rotateY(180deg);
+}

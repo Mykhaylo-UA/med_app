@@ -1,0 +1,33 @@
+.Message{
+    width: auto;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+
+    border-radius: 10px;
+}
+.Back{
+    width: calc(100% - 40px);
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    margin: 7px 10px;
+}
+.Back h4{
+    margin: 0;
+}
+.Yellow{
+    justify-content: flex-end;
+    padding-left: 20px;
+}
+.Green{
+    justify-content: flex-start;
+    padding-right: 20px;
+}
+.Green > div{
+    background-color: #25FF2E;
+}
+.Yellow > div{
+    background-color: #FFE925;
+}

@@ -1,0 +1,69 @@
+:root{
+    --width-nav: 70px;
+}
+
+.Layout{
+    display: flex;
+    min-height: 100vh;
+}
+.Layout > section{
+    width: calc(100% - var(--width-nav));
+    position: relative;
+    left: var(--width-nav);
+    background-color: #F9F9F9;
+}
+
+.Layout header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Layout header > div{
+    display:flex;
+    align-items: center;
+    padding: 0 20px;
+}
+.Layout header > div img{
+    width: 45px;
+    margin-right: 15px;
+}
+
+.Layout header > div:nth-child(2) img{
+    width: 30px;
+}
+.Layout header > div h3{
+    color: #4BBEC5;
+}
+
+.AdminPanel{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    position: fixed;
+    right: 20px;
+    top: 60px;
+    box-shadow: gray 0 0 10px;
+    cursor: pointer;
+}
+
+@media(max-width: 700px)
+{
+    :root{
+        --width-nav: 50px;
+    }
+    .Layout > section{
+        width: 100%;
+        position: static;
+        background-color: #F9F9F9;
+        padding-bottom: var(--width-nav);
+    }
+    .Layout header{
+        font-size: 0.8em;
+    }
+}

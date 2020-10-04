@@ -1,0 +1,111 @@
+.MainPage{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(226.59deg, #4BBEC5 2.44%, rgba(196, 196, 196, 0) 100%);
+
+    font-family: Sitka;
+}
+
+.MainPage > header{
+    width: 80%;
+    margin: auto;
+    padding-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.MainPage > header > span{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 45px;
+
+    text-align: center;
+}
+.MainPage > header > div{
+    width: 450px;
+
+    padding: 7px 0;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #74BCC0;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+
+    text-align: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+.MainPage > header > div:hover{
+    color: white;
+    background-color: #63a2a5;
+}
+
+.MainPage > main{
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.MainPage  h1{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 60px;
+    margin-bottom: 5px;
+}
+.MainPage h3{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+    margin-top: 5px;
+
+    color: #464646;
+}
+.Button{
+    background: #BCE7D8;
+    border-radius: 10px;
+    width: 400px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+
+    text-align: center;
+    padding: 10px 0;
+
+    transition: 0.2s;
+    cursor: pointer;
+}
+.Button:hover{
+    background: #a4c9bc;
+}
+.MainPage > main img{
+    width: 700px;
+    height: 500px;
+
+}
+.MainPage > img{
+    position: absolute;
+    bottom: 0; 
+    width: 100%;
+    left:0;
+}

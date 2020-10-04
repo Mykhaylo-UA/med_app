@@ -1,0 +1,13 @@
+.Users{
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+}
+.Users > thead{
+    position: sticky;
+    top: 0;
+    background-color: rgb(211, 211, 211);
+}
+.Users > tbody tr:hover{
+    background-color: rgb(255, 255, 181);
+}
