@@ -37,10 +37,10 @@ const User = () => {
     const submitTreatment = async () => {
         const response = await axios.post("http://localhost:80/admintreatment?id="+id,
             {
-                name: nameDisease,
+                name: nameTreatment,
                 count: start === "" ? null : count,
                 perDay: finish === "" ? null : perDay,
-                other: otherDisease
+                other: otherTreatment
             },
             { headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}}
         )
@@ -57,11 +57,11 @@ const User = () => {
              setUser(result.data)
 
             const resultDiseases =              
-                await axios.get("http://localhost:80/disease?id="+id, {headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
+                await axios.get("http://localhost:80/disease/admin/"+id, {headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
             setDiseases(resultDiseases.data)
 
             const resultTreatments =              
-                await axios.get("http://localhost:80/treatment?id="+id, {headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
+                await axios.get("http://localhost:80/treatment/admin/"+id, {headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
             console.log(resultTreatments.data)
             setTreatments(resultTreatments.data)
         }
@@ -84,10 +84,21 @@ const User = () => {
             <table className={classes.User}>
                 <caption>Diseases</caption>
                 <thead>
-                    {<tr>{diseases ? diseases[0] ? Object.keys(diseases[0]).map( key =><td key={key}>{key}</td>) : null : null}</tr>}
+                    <tr>
+                        <th>Name</th>
+                        <th>Start</th>
+                        <th>Finish</th>
+                        <th>Other</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    { diseases ? diseases.map( disease => <tr>{disease ? Object.values(disease).map( value =><td key={value}>{value}</td>) : null}</tr>):null}
+                    { diseases ? diseases.map( disease => <tr key={disease.id}>
+                        <td>{disease.name}</td>
+                        <td>{disease.start}</td>
+                        <td>{disease.finish}</td>
+                        <td>{disease.other}</td>
+                    </tr>) :null}                    
+                    
                     <tr>
                         <td><input value={nameDisease} onChange={e => setNameDisease(e.target.value)} id={1}  type={"text"} placeholder={""}  /></td>
                         <td><input value={start} onChange={e => setStart(e.target.value)} id={2} type={"date"} placeholder={""} /></td>
@@ -102,10 +113,20 @@ const User = () => {
             <table className={classes.User}>
                 <caption>Treatments</caption>
                 <thead>
-                    { treatments ? treatments.map( treatment => treatment ? Object.keys(treatment).map( key =><td key={key}><th>{key}</th></td>) : null):null}
+                    <tr>
+                        <th>Name</th>
+                        <th>Count</th>
+                        <th>Per Day</th>
+                        <th>Other</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    { treatments ? treatments.map( treatment => treatment ? Object.values(treatment).map( value =><td key={value}><th>{value}</th></td>) : null):null}
+                    { treatments ? treatments.map( treatment => <tr key={treatment.id}>
+                        <td>{treatment.name}</td>
+                        <td>{treatment.count}</td>
+                        <td>{treatment.perDay}</td>
+                        <td>{treatment.other}</td>
+                    </tr>) :null}
                     
                     <tr>
                         <td><input value={nameTreatment} onChange={e => setNameTreatment(e.target.value)} id={1}  type={"text"} placeholder={""}  /></td>

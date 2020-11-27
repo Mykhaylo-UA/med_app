@@ -50,6 +50,16 @@ const Profile = props =>{
                 element.other === null ? "-" : element.other])
     })
 
+    let arraytr = [];
+    props.profile.treatments.map(element=>{
+        return arraytr.push(
+            [
+                element.name, 
+                element.count === null ? "-" : element.count,
+                element.perDay === null ? "-" : element.perDay, 
+                element.other === null ? "-" : element.other])
+    })
+
     return (
         <main className={classes.Profile}>
             <div>
@@ -81,7 +91,7 @@ const Profile = props =>{
                     <div>
                         <Table 
                             headers={["Name", "Count", "Per day", "Other" ]}
-                            elements={[["Aspirin", "1 table", "3/day", "-"], ["Aspirin", "1 table", "3/day", "-"]]}    
+                            elements={arraytr}    
                         />
                     </div>
                 </div>

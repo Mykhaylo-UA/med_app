@@ -18,7 +18,8 @@ const initialState = {
         birthday: null,
         telephone: null,
         address: null,
-        diseases: []
+        diseases: [],
+        treatments: []
     }
 }
 

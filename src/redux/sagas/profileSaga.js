@@ -10,6 +10,9 @@ const fetchToApi = async () => {
 const fetchToApiDisease = async () =>{
     return await axios.get("http://localhost:80/disease", {headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
 }
+const fetchToApiTreatment = async () =>{
+    return await axios.get("http://localhost:80/treatment", {headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
+}
 const fetchEditToApi = async payload => {
     return await axios.put("http://localhost:80/user", payload ,{headers: { "Authorization" : "Bearer " + window.localStorage.getItem("token")}})
 }
@@ -22,7 +25,9 @@ function* fetchProfile(action) {
        yield put(openAlert({text: "Загрузка профілю...", timeout: 0}))
        const response = yield call(fetchToApi);
        const responseDisease = yield call(fetchToApiDisease);
+       const responseTreatment = yield call(fetchToApiTreatment);
        response.data.diseases = responseDisease.data;
+       response.data.treatments = responseTreatment.data;
        yield put(profileLoadSuccess(response.data));
     } catch (e) {
        yield put(profileLoadFailed(e.response));
